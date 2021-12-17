@@ -2,7 +2,6 @@ package slime.slime;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v1.CommandRegistrationCallback;
-import net.minecraft.server.command.CommandManager;
 import static net.minecraft.server.command.CommandManager.literal;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
