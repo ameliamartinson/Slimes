@@ -29,18 +29,17 @@ jobs:
       uses: gradle/gradle-build-action@4137be6a8bf7d7133955359dbd952c0ca73b1021
       with:
         arguments: build
-        
+
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.3.1
       with:
     # Artifact name
          name: artifact # optional, default is artifact
     # A file, directory or wildcard pattern that describes what to upload
-         path: /build/libs/*
+         path: build/libs
     # The desired behavior if no files are found using the provided path.
 
          if-no-files-found: warn # optional, default is warn
     # Duration after which artifact will expire in days. 0 means using default retention.
 
          retention-days: 0 # optional
-
