@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+org.eclipse.jdt.apt.aptEnabled=true
+org.eclipse.jdt.apt.genSrcDir=bin/generated-sources/annotations
+org.eclipse.jdt.apt.genTestSrcDir=bin/generated-test-sources/annotations
+org.eclipse.jdt.apt.processorOptions/defaultObfuscationEnv=named\:intermediary
+org.eclipse.jdt.apt.processorOptions/inMapFileNamedIntermediary=/home/amelia/.gradle/caches/fabric-loom/1.20.3/net.fabricmc.yarn.1_20_3.1.20.3+build.1-v2/mappings.tiny
+org.eclipse.jdt.apt.processorOptions/outMapFileNamedIntermediary=/home/amelia/repos/IdeaProjects/Slimes/build/loom-cache/mixin-map-net.fabricmc.yarn.1_20_3.1.20.3+build.1-v2.main.tiny
+org.eclipse.jdt.apt.processorOptions/outRefMapFile=/home/amelia/repos/IdeaProjects/Slimes/build/classes/java/main/slime-refmap.json
+org.eclipse.jdt.apt.processorOptions/quiet=true

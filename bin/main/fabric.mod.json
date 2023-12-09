@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "slime",
+  "version": "${version}",
+  "name": "Slime",
+  "description": "Check slime chunks",
+  "authors": [
+    "AmeliaMartinson"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/Slime/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "slime.slime.client.SlimeClient"
+    ],
+    "main": [
+      "slime.slime.Slime"
+    ]
+  },
+  "mixins": [
+    "Slime.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.21",
+    "fabric": "*",
+    "minecraft": "~1.20.1"
+  }
+}
