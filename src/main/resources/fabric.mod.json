@@ -15,9 +15,6 @@
   "icon": "assets/slime/icon.png",
   "environment": "*",
   "entrypoints": {
-    "client": [
-      "slime.slime.client.SlimeClient"
-    ],
     "main": [
       "slime.slime.Slime"
     ]
@@ -25,6 +22,6 @@
   "depends": {
     "fabricloader": ">=${loader_version}",
     "fabric": "*",
-    "minecraft": "${minecraft_version}"
+    "minecraft": ">=1.19"
   }
 }
