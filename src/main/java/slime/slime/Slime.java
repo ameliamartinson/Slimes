@@ -21,9 +21,9 @@ public class Slime implements ModInitializer {
 
             boolean isSlimeChunk = ChunkRandom.getSlimeRandom(xPosition, zPosition, seed, 0x3ad8025fL).nextInt(10) == 0;
             if (isSlimeChunk) {
-                source.sendFeedback(() -> Text.literal("Chunk " + xPosition + ", " + zPosition + " is a slime chunk."), false);
+                player.sendMessage(Text.of("Chunk " + xPosition + ", " + zPosition + " is a slime chunk."), false);
             } else {
-                source.sendFeedback(() -> Text.literal("Chunk " + xPosition + ", " + zPosition + " is NOT a slime chunk."), false);
+                player.sendMessage(Text.of("Chunk " + xPosition + ", " + zPosition + " is NOT a slime chunk."), false);
             }
             return 1;
         })));
