@@ -3,28 +3,26 @@
   "id": "slime",
   "version": "${version}",
   "name": "Slime",
-  "description": "Check slime chunks",
+  "description": "",
   "authors": [
-    "AmeliaMartinson"
+    "AmeliaMartinson",
+    "kevinthegreat1",
+    "AnOpenSauceDev"
   ],
-  "contact": {},
-  "license": "MIT",
-  "icon": "assets/Slime/icon.png",
+  "contact": {
+    "repo": "https://github.com/ameliamartinson/Slimes"
+  },
+  "license": "LGPL-3.0",
+  "icon": "assets/slime/icon.png",
   "environment": "*",
   "entrypoints": {
-    "client": [
-      "slime.slime.client.SlimeClient"
-    ],
     "main": [
       "slime.slime.Slime"
     ]
   },
-  "mixins": [
-    "Slime.mixins.json"
-  ],
   "depends": {
-    "fabricloader": ">=0.14.21",
+    "fabricloader": ">=${loader_version}",
     "fabric": "*",
-    "minecraft": "~1.20.1"
+    "minecraft": ">=1.19"
   }
 }
