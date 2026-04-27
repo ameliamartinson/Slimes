@@ -2,28 +2,29 @@ package slime.slime;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
-import net.minecraft.server.command.ServerCommandSource;
-import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.text.Text;
-import net.minecraft.util.math.random.ChunkRandom;
+import net.minecraft.commands.CommandSourceStack;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.network.chat.Component;
+import net.minecraft.world.level.levelgen.WorldgenRandom;
 
-import static net.minecraft.server.command.CommandManager.literal;
+import static net.minecraft.commands.Commands.literal;
 
 public class Slime implements ModInitializer {
     @Override
     public void onInitialize() {
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> dispatcher.register(literal("slime").executes(context -> {
-            ServerCommandSource source = context.getSource();
-            ServerPlayerEntity player = source.getPlayer();
-            int xPosition = player.getChunkPos().x;
-            int zPosition = player.getChunkPos().z;
-            long seed = source.getWorld().getSeed();
+            CommandSourceStack source = context.getSource();
+            ServerPlayer player = source.getPlayer();
+            assert player != null;
+            int xPosition = player.chunkPosition().x();
+            int zPosition = player.chunkPosition().z();
+            long seed = source.getLevel().getSeed();
 
-            boolean isSlimeChunk = ChunkRandom.getSlimeRandom(xPosition, zPosition, seed, 0x3ad8025fL).nextInt(10) == 0;
+            boolean isSlimeChunk = WorldgenRandom.seedSlimeChunk(xPosition, zPosition, seed, 0x3ad8025fL).nextInt(10) == 0;
             if (isSlimeChunk) {
-                player.sendMessage(Text.of("Chunk " + xPosition + ", " + zPosition + " is a slime chunk."), false);
+                player.sendSystemMessage(Component.literal("Chunk " + xPosition + ", " + zPosition + " is a slime chunk."), false);
             } else {
-                player.sendMessage(Text.of("Chunk " + xPosition + ", " + zPosition + " is NOT a slime chunk."), false);
+                player.sendSystemMessage(Component.literal("Chunk " + xPosition + ", " + zPosition + " is NOT a slime chunk."), false);
             }
             return 1;
         })));
